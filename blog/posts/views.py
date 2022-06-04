@@ -8,7 +8,6 @@ from .models import Post
 class PostViewSet(ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = [IsAdminUser]
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title', 'body']
     ordering_fields = ['id']
